@@ -4,10 +4,10 @@ let elf_1_attack = new Image();
 let troll_1 = new Image();
 let troll_1_attack = new Image();
 
-elf_1.src = '../../images/heroes/elf_1/elf_1_idle.png';
-elf_1_attack.src = '../../images/heroes/elf_1/elf_1_attack.png';
-troll_1_attack.src = '../../images/heroes/troll_1/troll_1_attak.png';
-troll_1.src = '../../images/heroes/troll_1/troll_1_idle.png';
+elf_1.src = 'images/heroes/elf_1/elf_1_idle.png';
+elf_1_attack.src = 'images/heroes/elf_1/elf_1_attack.png';
+troll_1_attack.src = 'images/heroes/troll_1/troll_1_attak.png';
+troll_1.src = 'images/heroes/troll_1/troll_1_idle.png';
 
 let elfSprite = elf_1;
 
@@ -26,7 +26,6 @@ function move() {
   heroCanvas.style.left = screenWidth / 100 * 15 + 'px';
   let elf = heroCanvas.getContext('2d');
   elf.clearRect(0, 0, 606, 10000);
-// console.log(moveElf);
   if (moveElf === -1212) {
     moveElf = 0;
   } else {
@@ -39,15 +38,15 @@ let idle = setInterval(move, 250);
 
 
 
-let attackButton = document.getElementById('attackButton');
-attackButton.addEventListener('click', attackHero);
+// let attackButton = document.getElementById('attackButton');
+// attackButton.addEventListener('click', attackHero);
 
 let trollPosition = 0;
 let trollMove = setInterval(() => {
   let enemyCanvas = document.getElementById('enemy');
   let screenWidth = window.innerWidth;
   enemyCanvas.style.width = screenWidth / 100 * 35 + 'px';
-  enemyCanvas.style.left = screenWidth / 100 * 50 + 'px';
+  enemyCanvas.style.left = screenWidth / 100 * 55 + 'px';
   let troll = enemyCanvas.getContext('2d');
   troll.clearRect(0, 0, 500, 3000);
 

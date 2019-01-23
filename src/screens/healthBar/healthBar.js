@@ -5,6 +5,7 @@ function random(min, max) {
 let heroHealth = 200;
 
 let heroHealthBar = document.getElementById('heroHealthBar').getContext('2d');
+// heroHealthBar.innerWidth = '600px';
 heroHealthBar.clearRect(0, 0, 3000, 50);
 heroHealthBar.fillStyle = '#ff0000';
 heroHealthBar.fillRect(0, 100, 200, 50);
@@ -23,15 +24,15 @@ function damage() {
   heroHealthBar.fillText(healthProcent + ' ' + '/ 100', 30, 80, 40);
   heroHealthBar.fillRect(0, 100, heroHealth, 50)
 
-  console.log(heroHealth)
 }
-// let klickMe = document.getElementById('healthButton');
-// klickMe.addEventListener('click', damage);
+let klickMe = document.getElementById('healthButton');
+klickMe.addEventListener('click', damage);
+
 
 
 let enemyHealth = 200;
 
-let a = window.innerWidth / 4;
+let a = window.innerWidth / 100 * 50;
 
 let enemyHealthBar = document.getElementById('enemyHealthBar').getContext('2d');
 enemyHealthBar.fillStyle = '#ff0000';
@@ -52,7 +53,6 @@ function damageEnemy() {
   enemyHealthBar.fillText(healthProcent + ' ' + '/ 100', -70, 80, 40);
   enemyHealthBar.fillRect(0, 100, -enemyHealth, 50)
 
-  // console.log(heroHealth)
 }
 // let klickMe = document.getElementById('healthButton');
 // klickMe.addEventListener('click', damageEnemy);

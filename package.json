@@ -1,0 +1,25 @@
+{
+  "name": "GAME",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirylAlexandrovich/GAME.git"
+  },
+  "keywords": [],
+  "author": "kirylAlexandrovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirylAlexandrovich/GAME/issues"
+  },
+  "homepage": "https://github.com/kirylAlexandrovich/GAME#readme",
+  "devDependencies": {
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
