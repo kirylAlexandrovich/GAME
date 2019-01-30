@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Elf's forest</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>game</title>
 </head>
+
 <body>
   <canvas id="heroHealthBar" class="heroHealthBar"></canvas>
   <canvas id="enemyHealthBar" class="enemyHealthBar"></canvas>
 
-  <div id="healthButton">click me</div>
-  <div id="attackButton" class="attack-button"><div>ATTACK</div></div>
-  <div id="taskScreen" class="task-screen">
-    <div style="font-family: fantasy; font-weight: 600; font-size: 30px; color: #bab585; text-align: center;">CHOOSE SPELL</div>
-    <div class="task-icons" style="background: url(images/spell_sprite/fire.png) no-repeat;"></div>
-    <div class="task-icons" style="background: url(images/spell_sprite/water.png) no-repeat;"></div>
-    <div class="task-icons" style="background: url(images/spell_sprite/forest.png) no-repeat;"></div>
-    <div class="task-icons" style="background: url(images/spell_sprite/flash.png) no-repeat;"></div>
+  <div id="heroDamage">HERO</div>
+  <div id="enemyDamage">ENEMY</div>
+  <div id="attackButton" class="attack-button">
+    <div>ATTACK</div>
   </div>
 
-  <canvas id="hero" class="heroCanvas" width="606" height="303"></canvas>
-  <canvas id="enemy" class="enemyCanvas" width="500" height="512"></canvas>
-  <script src="screens/buttle/buttle.js"></script>
-  <script src="screens/healthBar/healthBar.js"></script>
-  <script src="components/modal-dialog/modal-dialog.js"></script>
+  <div id="modalScreenAttack" class="modal-screen-attack">
+    
+  </div>
+
+  <div id="modalScreenTask" class="modal-screen-task">
+    <h3 id="taskHeader" class="task-header"></h3>
+    <section>
+      <span id="tasks" class="task"></span>
+      <input id="taskAnsver" class="task-ansver" name="ansver" value="" autofocus>
+    </section>
+    <div id="ansverContainer" class="ansver-container">
+    </div>
+    <div id="submitAnsver" class="submit-ansver-button">
+      <div>CHECK</div>
+    </div>
+  </div>
+
+  <canvas id="hero" class="heroCanvas"></canvas>
+
+  <canvas id="enemy" class="enemyCanvas"></canvas>
+  <div id="enemyAttack"></div>
 </body>
+
 </html>

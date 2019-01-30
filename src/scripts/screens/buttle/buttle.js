@@ -1,4 +1,3 @@
-// import {damage, damageEnemy} from '../healthBar/healthBars';
 let elf_1 = new Image();
 let elf_1_attack = new Image();
 let troll_1 = new Image();
@@ -15,7 +14,7 @@ let moveElf = 0;
 
 function attackHero() {
   elfSprite = elf_1_attack;
-  setTimeout(() => {elfSprite = elf_1}, 1000);
+  setTimeout(() => {elfSprite = elf_1;}, 1000);
   return moveElf = 0;
 };
 
@@ -59,7 +58,3 @@ let trollMove = setInterval(() => {
   // troll.drawImage(troll_1_attack, trollPosition, 0);
   troll.drawImage(troll_1, trollPosition, 120);
 }, 200);
-
-
-// drawElf();
-// drawTroll();
