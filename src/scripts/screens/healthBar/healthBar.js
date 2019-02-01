@@ -1,3 +1,4 @@
+import { endGame } from '../buttle/gameOver';
 
 export function healthBar() {
   function random(min, max) {
@@ -18,10 +19,13 @@ export function healthBar() {
   heroHealthBar.fillText('100 / 100', 30, 40, 100);
 
   function damage() {
-    let damage = random(10, 20);
+    let damage = random(40, 60);
     heroHealth -= damage;
     if (heroHealth <= 0) {
       heroHealth = 0;
+      endGame('enemy');
+      const heroDie = document.getElementById('heroDie');
+      heroDie.click();
     };
 
     let healthProcent = Math.round(heroHealth / oneProcentHeroHealth);
@@ -47,10 +51,13 @@ export function healthBar() {
   enemyHealthBar.fillText('100 / 100', -130, 40, 100);
 
   function damageEnemy() {
-    let damage = random(10, 30);
+    let damage = random(50, 70);
     enemyHealth += damage;
     if (enemyHealth >= 0) {
       enemyHealth = 0;
+      endGame('hero');
+      const enemyDie = document.getElementById('enemyDie');
+      enemyDie.click();
     };
   
     let healthProcent = Math.round(enemyHealth / oneProcentEnemyHealth);

@@ -1,42 +1,30 @@
-import {
-  layoutScreenAttack
-} from './modalScreenAttack.template';
-import {
-  mathTask
-} from './tasks/mathTask';
-import {
-  translateTask
-} from './tasks/translateTask';
-import {
-  historyTask
-} from './tasks/historyTask';
+import { layoutScreenAttack } from './modalScreenAttack.template';
+import { mathTask } from './tasks/mathTask';
+import { translateTask } from './tasks/translateTask';
+import { historyTask } from './tasks/historyTask';
+import { geographyTask } from './tasks/geographyTask';
 
 export function modalScreenAttack() {
   const screenAttack = document.getElementById('modalScreenAttack');
   screenAttack.innerHTML = layoutScreenAttack;
   screenAttack.style.display = 'block';
-  screenAttack.addEventListener('click', modalScreenTask);
+  screenAttack.onclick = modalScreenTask;
 
   function modalScreenTask() {
-    const screenTask = document.getElementById('modalScreenTask');
-    screenTask.style.display = 'block';
-    if (event.target === document.getElementById('fire')) {
-      mathTask();
-    }
-    if (event.target === document.getElementById('water')) {
-      translateTask();
-    }
-    if (event.target === document.getElementById('forest')) {
-      // historyTask();
-    }
-    if (event.target === document.getElementById('flash')) {
-      console.log('flash');
+    screenAttack.style.display = 'none';
+    switch (event.target) {
+      case document.getElementById('fire'):
+        mathTask();
+        break;
+      case document.getElementById('water'):
+        translateTask();
+        break;
+      case document.getElementById('forest'):
+        historyTask();
+        break;
+      case document.getElementById('flash'):
+        geographyTask();
+        break;
     }
   };
-  const shutterScreenAttack = document.getElementById('shutterScreenAttack');
-  shutterScreenAttack.addEventListener('click',closeScreenAttack);
-
-  function closeScreenAttack() {
-    screenAttack.style.display = 'none';
-  }
 };

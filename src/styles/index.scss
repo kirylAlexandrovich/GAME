@@ -1,10 +1,64 @@
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 body {
   width: 100%;
   height: 100vh;
-  background-image: url(../images/backgrounds/background_4.png);
-  background-size: 100% 100%;
   background-repeat: no-repeat;
   margin: 0;
+  font-family: fantasy;
+  font-weight: 600;
+  background-image: url(../images/backgrounds/background_4.png);
+  background-size: 100% 100%;
+}
+.loadingContainer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: radial-gradient(#000, #1f320e);
+  animation: opacity 4s ease-out;
+}
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -60px 0 0 -60px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #250071;
+}
+.loading:after {
+  content: '';
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  border-radius: 50%;
+  top: -20%;
+  left: -20%;
+  box-shadow: inset #00faff 6px 6px 8px 0px;
+  animation: rotate 2s infinite linear;
 }
 
 .enemyCanvas {
@@ -23,21 +77,18 @@ body {
 }
 
 .attack-button {
-  width: 200px;
-  height: 85px;
-  margin: auto;
-  background-image: url(../images/spell_sprite/attack-button.png);
-  background-size: 100% 200%;
-  text-align: center;
   cursor: pointer;
+  width: 205px;
+  height: 77px;
+  margin: auto;
+  text-align: center;
+  background-image: url(../images/spell_sprite/attack-button.png);
   z-index: 1;
 }
 
 .attack-button div {
   padding: 20px;
   color: #5f5245;
-  font-family: fantasy;
-  font-weight: 600;
   font-size: 30px;
 }
 
@@ -62,7 +113,7 @@ body {
   border-radius: 30px / 50px;
   border: 5px solid #00000050;
   position: relative;
-  bottom: 460px;
+  bottom: 100px;
   background: radial-gradient(#92882f, #1f2837);
   z-index: 3;
 }
@@ -81,16 +132,12 @@ body {
 }
 
 .task-header {
-  font-family: fantasy;
-  font-weight: 600;
   font-size: 30px;
   color: #bab585;
   text-align: center;
 }
 
 .task {
-  font-family: fantasy;
-  font-weight: 600;
   font-size: 50px;
   color: #bab585
 }
@@ -105,17 +152,15 @@ body {
 
 .submit-ansver-button {
   cursor: pointer;
-  background-image: url(../images/spell_sprite/submit-button.png);
   width: 176px;
   height: 80px;
   position: absolute;
   bottom: 25px;
   left: 115px;
+  background-image: url(../images/spell_sprite/submit-button.png);
 }
 
 .submit-ansver-button div {
-  font-family: fantasy;
-  font-weight: 600;
   font-size: 30px;
   color: #e6ddc1;
   margin-left: 33px;
@@ -130,17 +175,46 @@ body {
 }
 
 .ansver-button {
-  background: linear-gradient( 180deg, #424333, #6a6332) ;
-  font-family: fantasy;
+  cursor: pointer;
   font-size: 20px;
   color: #bab585;
   padding: 4px;
   border-radius: 10px;
   border: 2px solid #605f35;
-  cursor: pointer;
   margin-right: 10px;
+  background: linear-gradient( 180deg, #424333, #6a6332);
 }
 
 .shutter-screen-attack {
   position: relative;
+}
+
+.end-game {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: fixed;
+  background: radial-gradient(#b7a549, #26140a)
+}
+.end-game h2 {
+  font-size: 70px;
+  color: #69b50e;
+}
+
+.reload-button {
+  width: 30%;
+  text-align: center;
+  font-size: 35px;
+  color: #7fad17;
+  margin: auto;
+  padding: 30px 0 25px;
+  background-image: url(../images/spell_sprite/play-again-button.png);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.image-elf-1 { 
+  background-image: url(../images/heroes/elf_1/elf_1_idle.png);
+}
+.image-troll-1 {
+  background-image: url(../images/heroes/troll_1/troll_1_idle.png);
 }

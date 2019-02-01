@@ -2,9 +2,10 @@ import {taskScreen} from '../layoutTask.template';
 
 export function mathTask() {
 
-  let modalScreenTask = document.getElementById('modalScreenTask');
+  const modalScreenTask = document.getElementById('modalScreenTask');
+  modalScreenTask.style.display = 'block';
   modalScreenTask.innerHTML = taskScreen;
-  let taskHeader = document.getElementById('taskHeader');
+  const taskHeader = document.getElementById('taskHeader');
   taskHeader.innerHTML = 'MATH TASK';
 
   function random(min, max) {
@@ -16,8 +17,8 @@ export function mathTask() {
   let result;
 
   function findSymbol() {
-    let a = random(1, 4);
-    switch (a) {
+    let num = random(1, 4);
+    switch (num) {
       case 1:
         result = num1 + num2;
         symbol = '+';
@@ -53,34 +54,32 @@ export function mathTask() {
   findSymbol();
 
   let expression = num1 + ' ' + symbol + ' ' + num2 + ' ' + '=';
-  console.log(result);
   let task = document.getElementById('tasks');
   task.innerHTML = expression;
   
   let mathAnsver = document.getElementById('taskAnsver');
   mathAnsver.type = 'number';
 
-  function chekAnsver() {
+  function checkAnsver() {
     const enemyAttack = document.getElementById('enemyAttack');
     const heroDamage = document.getElementById('heroDamage');
     const enemyDamage = document.getElementById('enemyDamage');
-    const screenAttack = document.getElementById('modalScreenAttack');
+
 
     if (+mathAnsver.value === result) {
       enemyDamage.click();
       setTimeout(() => {
         enemyAttack.click();
         heroDamage.click();
-      }, 3000);
+      }, 2000);
     } else {
       enemyAttack.click();
       heroDamage.click();
     };
 
     modalScreenTask.style.display = 'none';
-    // screenAttack.style.display = 'none';
   };
 
-  let chekButton = document.getElementById('submitAnsver');
-  chekButton.addEventListener('click', chekAnsver);
+  let checkButton = document.getElementById('submitAnsver');
+  checkButton.addEventListener('click', checkAnsver);
 };

@@ -8,30 +8,27 @@
 </head>
 
 <body>
+  <div id="loadingContainer" class="loadingContainer">
+    <div class="loading"></div>
+  </div>
+  <div id="finalScreen">
+  </div>
   <canvas id="heroHealthBar" class="heroHealthBar"></canvas>
   <canvas id="enemyHealthBar" class="enemyHealthBar"></canvas>
 
-  <div id="heroDamage">HERO</div>
-  <div id="enemyDamage">ENEMY</div>
+  <div id="heroDamage"></div>
+  <div id="heroDie"></div>
+  <div id="enemyDamage"></div>
+  <div id="enemyDie"></div>
   <div id="attackButton" class="attack-button">
     <div>ATTACK</div>
   </div>
 
   <div id="modalScreenAttack" class="modal-screen-attack">
-    
+
   </div>
 
   <div id="modalScreenTask" class="modal-screen-task">
-    <h3 id="taskHeader" class="task-header"></h3>
-    <section>
-      <span id="tasks" class="task"></span>
-      <input id="taskAnsver" class="task-ansver" name="ansver" value="" autofocus>
-    </section>
-    <div id="ansverContainer" class="ansver-container">
-    </div>
-    <div id="submitAnsver" class="submit-ansver-button">
-      <div>CHECK</div>
-    </div>
   </div>
 
   <canvas id="hero" class="heroCanvas"></canvas>

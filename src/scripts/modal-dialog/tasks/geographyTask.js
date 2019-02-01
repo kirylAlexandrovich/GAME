@@ -1,29 +1,31 @@
-import {dictionary} from './dictionary';
+import {geographyList} from './geographyList';
 import {taskScreen} from '../layoutTask.template';
 
-export function translateTask() {
+
+export function geographyTask() {
   const modalScreenTask = document.getElementById('modalScreenTask');
   modalScreenTask.style.display = 'block';
   modalScreenTask.innerHTML = taskScreen;
   const taskHeader = document.getElementById('taskHeader');
-  taskHeader.innerHTML = 'TRANSLATE TASK';
+  taskHeader.innerHTML = 'GEOGRAPHY TASK';
   
   const taskAnsver = document.getElementById('taskAnsver');
   taskAnsver.style.width = '200px';
-  taskAnsver.style.margin = '0 50px 0 50px';
+  taskAnsver.style.margin = '0 50px 120px';
   
   function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
-  const number = random(0, 14);
-  const englishWord = dictionary[number].key;
-  const russianWord = dictionary[number].value;
+  const number = random(0, 8);
+  const country = geographyList[number].country;
+  const capitalSity = geographyList[number].capitalSity;
 
   const task = document.getElementById('tasks');
-  task.innerHTML = englishWord;
+  task.style.fontSize = '40px';
+  task.innerHTML = 'Capital of:'+ ' ' + country;
   
   function checkAnsver() {
-    if(taskAnsver.value.toLowerCase() == russianWord) {
+    if(taskAnsver.value.toLowerCase() == capitalSity.toLowerCase()) {
       const enemyDamage = document.getElementById('enemyDamage');
       enemyDamage.click();
       const enemyAttack = document.getElementById('enemyAttack');
@@ -38,6 +40,7 @@ export function translateTask() {
     
     modalScreenTask.style.display = 'none';
   };
+
   const checkButton = document.getElementById('submitAnsver');
   checkButton.addEventListener('click', checkAnsver);
 };

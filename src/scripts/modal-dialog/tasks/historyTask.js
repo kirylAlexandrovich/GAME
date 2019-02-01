@@ -4,6 +4,7 @@ import {checkboxLayout} from '../layoutTask.template';
  
 export function historyTask() {
   const modalScreenTask = document.getElementById('modalScreenTask');
+  modalScreenTask.style.display = 'block';
   modalScreenTask.innerHTML = taskScreen;
   const taskHeader = document.getElementById('taskHeader');
   taskHeader.innerHTML = 'HISTORY TASK';
@@ -18,8 +19,11 @@ export function historyTask() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
   
-  const questionNumber = questionList[random(0, 11)];
+  let count = 0;
+  count + 1;
+  console.log(count);
 
+  const questionNumber = questionList[random(0, 11)];
 
   const task = document.getElementById('tasks');
   task.style.fontSize = '25px';
@@ -33,7 +37,7 @@ export function historyTask() {
   const thirdButton = document.getElementById('thirdButton');
   const fourthButton = document.getElementById('fourthButton');
 
-  console.log(questionNumber.rightAnsver);
+  console.log(questionNumber.rightAnswer);
 
   firstButton.innerText = questionNumber.ansver[0];
   secondButton.innerText = questionNumber.ansver[1];
@@ -43,23 +47,19 @@ export function historyTask() {
   const enemyDamage = document.getElementById('enemyDamage');
   const enemyAttack = document.getElementById('enemyAttack');
   const heroDamage = document.getElementById('heroDamage');
-  // const screenAttack = document.getElementById('modalScreenAttack');
   ansverContainer.addEventListener('click', checkAnsver);
 
   function checkAnsver() {
-    if(event.target.innerText === questionNumber.rightAnsver) {
+    if(event.target.innerText === questionNumber.rightAnswer) {
       enemyDamage.click();
       setTimeout(()=> {enemyAttack.click();
       heroDamage.click();
-    }, 3000);
+    }, 2000);
     }else{
       enemyAttack.click();
       heroDamage.click();
     };
 
     modalScreenTask.style.display = 'none';
-    // screenAttack.style.display = 'none';
-    const shutterScreenAttack = document.getElementById('shutterScreenAttack');
-    shutterScreenAttack.click();
   };
 };
